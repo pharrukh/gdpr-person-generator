@@ -17,7 +17,7 @@ You must get the following result because of the seed "some-seed-of-your-choice"
 
 ```json
 { 
-  "name": "Samad"',
+  "name": "Samad",
   "surname": "Ergashev",
   "dob": "1967-11-26T18:39:11.318Z" 
 }
