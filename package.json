@@ -1,8 +1,15 @@
 {
   "name": "gdpr-person-generator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Anonymization tool to comply with EU data protection law, GDRP",
   "main": "index.js",
+  "bugs": {
+    "url": "https://github.com/pharrukh/gdpr-person-generator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pharrukh/gdpr-person-generator.git"
+  },
   "scripts": {
     "test": "jest"
   },
