@@ -1,0 +1,16 @@
+{
+  "name": "gdpr-person-generator",
+  "version": "0.0.1",
+  "description": "Anonymization tool to comply with EU data protection law, GDRP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "GDPR",
+    "uzbekistan",
+    "deterministic"
+  ],
+  "author": "Farrukh Normuradov",
+  "license": "MIT"
+}
