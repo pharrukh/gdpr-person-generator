@@ -79,7 +79,7 @@ export class GdprPersonGenerator implements IGdprPersonGenerator {
       ? 18
       : 10
     const start = new Date(BASE_DATE.toString())
-    const end = new Date()
+    const end = new Date('2021-01-01')
     end.setFullYear(new Date().getFullYear() - yearsToSubtract)
     const randomDate = new Date(
       start.getTime() + randomNumber * (end.getTime() - start.getTime())

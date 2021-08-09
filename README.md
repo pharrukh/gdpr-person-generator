@@ -17,7 +17,7 @@ You must get the following result because of the seed "some-seed-of-your-choice"
 
 ```json
 {
-  "dob": "1988-03-28",
+  "dob": "1987-11-02",
   "name": "Samad",
   "surname": "Niyazov"
 }
@@ -31,4 +31,4 @@ You must get the following result because of the seed "some-seed-of-your-choice"
 
 ## TODOs
 
-- investigate bug with the non-deterministic date genreation
+- 🤷‍♂️
