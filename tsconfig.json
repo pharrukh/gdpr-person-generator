@@ -6,7 +6,6 @@
     "esModuleInterop": true,
     "outDir": "./source",
     "declaration": true,
-    "incremental": true,
 
     "strict": true,
     "noUnusedLocals": true,
