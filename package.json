@@ -1,6 +1,6 @@
 {
   "name": "gdpr-person-generator",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Anonymization tool to comply with EU data protection law, GDRP",
   "main": "index.js",
   "bugs": {
