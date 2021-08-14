@@ -1,10 +1,17 @@
 {
   "compilerOptions": {
     "target": "es6",
+    "module": "commonjs",
+    
+    "esModuleInterop": true,
     "outDir": "./source",
     "declaration": true,
-    "module": "commonjs",
-    "esModuleInterop": true
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/src/*.test.ts"]

@@ -55,23 +55,17 @@ export class GdprPersonGenerator implements IGdprPersonGenerator {
   }
 
   private getNameCollection (gender: Gender): string[] {
-    if (this.country === "uzbekistan") {
-      if (gender === "male") {
-        return UZBEKISTAN_MALE_NAMES
-      } else if (gender === "female") {
-        return UZBEKISTAN_FEMALE_NAMES
-      }
+    if (gender === "male") {
+      return UZBEKISTAN_MALE_NAMES
     }
+    return UZBEKISTAN_FEMALE_NAMES
   }
 
   private getSurnameCollection (gender: Gender): string[] {
-    if (this.country === "uzbekistan") {
-      if (gender === "male") {
-        return UZBEKISTAN_MALE_SURNAMES
-      } else if (gender === "female") {
-        return UZBEKISTAN_FEMALE_SURNAMES
-      }
+    if (gender === "male") {
+      return UZBEKISTAN_MALE_SURNAMES
     }
+    return UZBEKISTAN_FEMALE_SURNAMES
   }
 
   private generateRandomDate (shouldSubtractEighteenYears: boolean): DateOnly {
@@ -81,7 +75,9 @@ export class GdprPersonGenerator implements IGdprPersonGenerator {
     const start = new Date(BASE_DATE.toString())
     const end = new Date()
     end.setFullYear(new Date().getFullYear() - yearsToSubtract)
-    const randomDate = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
+    const randomDate = new Date(
+      start.getTime() + Math.random() * (end.getTime() - start.getTime())
+    )
 
     return formatDate(randomDate)
   }

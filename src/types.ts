@@ -9,7 +9,7 @@ export class Seed {
     if (this.isValid(value)) {
       this.value = value
     } else {
-      throw new Error(`Seed should be longer than 4 characters, ${this.value.length} were provided.`)
+      throw new Error(`Seed should be longer than 4 characters, ${value.length} were provided.`)
     }
   }
 
@@ -33,7 +33,7 @@ export class DateOnly {
     if (this.isValid(value)) {
       this.value = value
     } else {
-      throw new Error(`Incorrect value provided ("${this.value}"). It is expected to have the following format "yyyy-mm-dd"`)
+      throw new Error(`Incorrect value provided ("${value}"). It is expected to have the following format "yyyy-mm-dd"`)
     }
   }
 
