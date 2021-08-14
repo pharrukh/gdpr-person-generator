@@ -5,7 +5,9 @@ Anonymization tool to comply with EU data protection law, GDRP.
 ## How-To
 
 ```typescript
-import { GdprPersonGenerator } from "gdpr-person-generator");
+const { GdprPersonGenerator } = require("gdpr-person-generator");
+// import { GdprPersonGenerator } from "gdpr-person-generator");
+
 const generator = new GdprPersonGenerator();
 const seed = "some-seed-of-your-choice";
 const person = generator.generatePerson(seed, "male");
