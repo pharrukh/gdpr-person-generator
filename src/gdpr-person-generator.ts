@@ -5,7 +5,7 @@ import {
   UZBEKISTAN_FEMALE_SURNAMES,
   UZBEKISTAN_MALE_NAMES,
   UZBEKISTAN_MALE_SURNAMES
-} from "./uz"
+} from "./data/uz"
 import {
   Country,
   DateOnly,
