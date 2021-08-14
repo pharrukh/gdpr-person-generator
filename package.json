@@ -1,8 +1,9 @@
 {
   "name": "gdpr-person-generator",
-  "version": "0.0.5",
+  "version": "0.0.16",
   "description": "Anonymization tool to comply with EU data protection law, GDRP",
-  "main": "index.js",
+  "main": "source/index.js",
+  "types": "source/index.d.ts",
   "bugs": {
     "url": "https://github.com/pharrukh/gdpr-person-generator/issues"
   },
@@ -13,7 +14,8 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint './src/**/*.ts'",
-    "lint:fix": "eslint './src/**/*.ts' --fix"
+    "lint:fix": "eslint './src/**/*.ts' --fix",
+    "build": "tsc"
   },
   "keywords": [
     "GDPR",
@@ -22,6 +24,10 @@
   ],
   "author": "Farrukh Normuradov",
   "license": "MIT",
+  "files": [
+    "source/*.js",
+    "source/**/*.d.ts"
+  ],
   "dependencies": {
     "seedrandom": "^2.4.4"
   },

@@ -1,4 +1,4 @@
-import {GdprPersonGenerator} from "."
+import {GdprPersonGenerator} from "./gdpr-person-generator"
 import {IPerson, Seed} from "./types"
 
 test("deterministically returns the same male person", () => {
