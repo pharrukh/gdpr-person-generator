@@ -11,7 +11,9 @@
     "url": "https://github.com/pharrukh/gdpr-person-generator.git"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint './src/**/*.ts'",
+    "lint:fix": "eslint './src/**/*.ts' --fix"
   },
   "keywords": [
     "GDPR",
@@ -24,6 +26,14 @@
     "seedrandom": "^2.4.4"
   },
   "devDependencies": {
-    "jest": "^23.6.0"
+    "@types/jest": "^26.0.24",
+    "@types/seedrandom": "^3.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "eslint": "^7.32.0",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.4",
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5"
   }
 }
