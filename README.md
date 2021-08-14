@@ -28,3 +28,8 @@ You must get the following result because of the seed "some-seed-of-your-choice"
 - only "uzbeksitan" is among the supported countries
 - only first name, last name and date of birth are generated
 - only deterministic approach
+
+## TODOs
+
+- automate publication to merges to master
+- setup CI/CD on Azure DevOps that would build, run tests and lint
