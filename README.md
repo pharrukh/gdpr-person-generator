@@ -33,3 +33,4 @@ You must get the following result because of the seed "some-seed-of-your-choice"
 
 - automate publication to merges to master
 - setup CI/CD on Azure DevOps that would build, run tests and lint
+- add version bumping based on convensional commits
