@@ -1,11 +1,5 @@
-name: gdpr-person-generator pipeline
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+name: base pipeline
+on: [push]
 jobs:
   build:
 
