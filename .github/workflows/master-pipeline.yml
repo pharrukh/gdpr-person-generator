@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
+        node-version: [14.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -21,4 +21,12 @@ jobs:
       - run: npm run build --if-present
       - run: npm test
       - run: npm run lint
-      - run: npm publish
+      - name: publish
+        image: node:14
+        environment:
+          NPM_TOKEN:
+            from_secret: NPM_PUBLICATION_TOKEN
+        commands:
+        - echo //registry.npmjs.org/:_authToken=$NPM_TOKEN > .npmrc
+        - npm publish
+
