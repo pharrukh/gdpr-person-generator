@@ -11,6 +11,9 @@
     "type": "git",
     "url": "https://github.com/pharrukh/gdpr-person-generator.git"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "test": "jest",
     "lint": "eslint './src/**/*.ts'",
