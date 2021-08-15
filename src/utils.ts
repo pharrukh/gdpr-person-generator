@@ -1,4 +1,4 @@
-import {DateOnly} from "./types"
+import {DateOnly} from './types'
 
 export function formatDate (date: Date): DateOnly {
   let month = `${date.getMonth() + 1}`
@@ -17,5 +17,5 @@ export function formatDate (date: Date): DateOnly {
     year,
     month,
     day
-  ].join("-"))
+  ].join('-'))
 }

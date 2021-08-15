@@ -48,7 +48,7 @@ export class DateOnly {
   }
 }
 
-export type Gender = "male" | "female";
+export type Gender = 'male' | 'female';
 
 export interface IPerson {
   name: string;
@@ -57,7 +57,7 @@ export interface IPerson {
 }
 
 export interface IGdprPersonGenerator {
-  generatePerson(seed: Seed, gender: Gender, isMuture?: boolean): IPerson;
+  generatePerson(gender: Gender, isMuture?: boolean): IPerson;
 }
 
-export type Country = "uzbekistan";
+export type Country = 'uzbekistan';

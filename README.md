@@ -8,18 +8,18 @@ Anonymization tool to comply with EU data protection law, GDRP.
 const { GdprPersonGenerator, Seed } = require("gdpr-person-generator");
 // import { GdprPersonGenerator } from "gdpr-person-generator");
 
-const generator = new GdprPersonGenerator();
 const seed = new Seed("some-seed-of-your-choice");
-const person = generator.generatePerson(seed, "male");
+const generator = new GdprPersonGenerator(seed);
+const person = generator.generatePerson("male");
 ```
 
 You must get the following result because of the seed "some-seed-of-your-choice"
 
 ```json
 {
-  "dob": "1988-03-27",
-  "name": "Manzur",
-  "surname": "Salamov"
+  "dob": "1988-03-28",
+  "name": "Samad",
+  "surname": "Niyazov"
 }
 ```
 
@@ -31,7 +31,6 @@ You must get the following result because of the seed "some-seed-of-your-choice"
 
 ## TODOs
 
-- make seedrandom local and not global
 - automate publication to merges to master
 - setup CI/CD on Azure DevOps that would build, run tests and lint
 - add version bumping based on convensional commits

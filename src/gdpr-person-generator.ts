@@ -1,74 +1,76 @@
-import seedrandom from "seedrandom"
-import {BASE_DATE, DEFAULT_SEED} from "./constants"
+import seedrandom from 'seedrandom'
+import {BASE_DATE, DEFAULT_SEED} from './constants'
 import {
   UZBEKISTAN_FEMALE_NAMES,
   UZBEKISTAN_FEMALE_SURNAMES,
   UZBEKISTAN_MALE_NAMES,
   UZBEKISTAN_MALE_SURNAMES
-} from "./data/uz"
+} from './data/uz'
 import {
-  Country,
   DateOnly,
   Gender,
   IGdprPersonGenerator,
   IPerson,
   Seed
-} from "./types"
-import {formatDate} from "./utils"
+} from './types'
+import {formatDate} from './utils'
 
 export class GdprPersonGenerator implements IGdprPersonGenerator {
-  constructor (readonly country: Country = "uzbekistan") {}
+  constructor (private seed: Seed = DEFAULT_SEED) {}
 
   generatePerson (
-    seed: Seed = DEFAULT_SEED,
-    gender: Gender = "female",
+    gender: Gender = 'female',
     isMuture = true
   ): IPerson {
-    seedrandom(seed.toString(), {
-      "global": true
-    })
+    const randomFunction = seedrandom(this.seed.toString())
+    const randomNumber = randomFunction()
 
     return {
-      "dob": this.getDoB(isMuture).toString(),
-      "name": this.getName(gender),
-      "surname": this.getSurname(gender)
+      'dob': this.getDoB(isMuture, randomNumber).toString(),
+      'name': this.getName(gender, randomNumber),
+      'surname': this.getSurname(gender, randomNumber)
     }
   }
 
-  private getName (gender: Gender): string {
-    return this.getRandomObjectFrom(this.getNameCollection(gender))
+  private getName (gender: Gender, randomNumber: number): string {
+    return this.getRandomObjectFrom(this.getNameCollection(gender), randomNumber)
   }
 
-  private getSurname (gender: Gender): string {
-    return this.getRandomObjectFrom(this.getSurnameCollection(gender))
+  private getSurname (gender: Gender, randomNumber: number): string {
+    return this.getRandomObjectFrom(this.getSurnameCollection(gender), randomNumber)
   }
 
-  private getDoB (isMuture: boolean): DateOnly {
+  private getDoB (isMuture: boolean, randomNumber: number): DateOnly {
     const subtractEighteenYears = isMuture
-    return this.generateRandomDate(subtractEighteenYears)
+    return this.generateRandomDate(subtractEighteenYears, randomNumber)
   }
 
-  private getRandomObjectFrom (collection: string[]): string {
+  private getRandomIndexFrom (collection: string[], randomNumber: number): number {
     const len = collection.length
-    const index = Math.floor(Math.random() * len)
+    const index = Math.floor(randomNumber * len)
+    return index
+  }
+
+  private getRandomObjectFrom (collection: string[], randomNumber: number): string {
+    const index = this.getRandomIndexFrom(collection, randomNumber)
     return collection[index]
   }
 
   private getNameCollection (gender: Gender): string[] {
-    if (gender === "male") {
+    if (gender === 'male') {
       return UZBEKISTAN_MALE_NAMES
     }
     return UZBEKISTAN_FEMALE_NAMES
   }
 
   private getSurnameCollection (gender: Gender): string[] {
-    if (gender === "male") {
+    if (gender === 'male') {
       return UZBEKISTAN_MALE_SURNAMES
     }
     return UZBEKISTAN_FEMALE_SURNAMES
   }
 
-  private generateRandomDate (shouldSubtractEighteenYears: boolean): DateOnly {
+  private generateRandomDate (shouldSubtractEighteenYears: boolean, randomNumber: number): DateOnly {
     const yearsToSubtract = shouldSubtractEighteenYears
       ? 18
       : 10
@@ -76,7 +78,7 @@ export class GdprPersonGenerator implements IGdprPersonGenerator {
     const end = new Date()
     end.setFullYear(new Date().getFullYear() - yearsToSubtract)
     const randomDate = new Date(
-      start.getTime() + Math.random() * (end.getTime() - start.getTime())
+      start.getTime() + randomNumber * (end.getTime() - start.getTime())
     )
 
     return formatDate(randomDate)
