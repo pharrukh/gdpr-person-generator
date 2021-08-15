@@ -12,7 +12,7 @@
     "url": "https://github.com/pharrukh/gdpr-person-generator.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://registry.npmjs.org/"
   },
     "scripts": {
     "test": "jest",
