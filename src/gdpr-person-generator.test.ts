@@ -30,7 +30,7 @@ test('should show example as in readme', () => {
   const person = generator.generatePerson('male')
 
   assert(person, 'Samad', 'Niyazov')
-  expect(person.dob).toEqual('1988-03-28')
+  expect(person.dob).toEqual('1988-03-29')
 })
 
 function assert (
