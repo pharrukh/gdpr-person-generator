@@ -7,22 +7,15 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     environment: Publication
-    env:
-      INPUT_TOKEN: ${{ secrets.NPM_TOKEN }}
-      token: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: 10
+          node-version: '14.x'
+          registry-url: 'https://registry.npmjs.org'
       - run: npm install
       - run: npm test
-      - shell: bash
+      - run: npm publish
         env:
-          SUPER_SECRET: ${{ secrets.TEST_SECRET }}
-        run: |
-          echo "$SUPER_SECRET"
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
