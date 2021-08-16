@@ -16,6 +16,10 @@ import {
 import {formatDate} from './utils'
 
 export class GdprPersonGenerator implements IGdprPersonGenerator {
+
+  /**
+   * @param seed key that deterministically generates the same random number
+   */
   constructor (private seed: Seed = DEFAULT_SEED) {}
 
   generatePerson (
