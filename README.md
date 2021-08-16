@@ -31,5 +31,4 @@ You must get the following result because of the seed "some-seed-of-your-choice"
 
 ## TODOs
 
-- add version bumping based on convensional commits
 - investigate bug with the non-deterministic date genreation
