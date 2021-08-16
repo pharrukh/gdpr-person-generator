@@ -1,4 +1,4 @@
-name: base pipeline
+name: Base Pipeline
 on:
   push:
     branches-ignore:

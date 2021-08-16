@@ -1,6 +1,6 @@
 {
   "name": "gdpr-person-generator",
-  "version": "0.0.26",
+  "version": "0.0.0-development",
   "description": "Anonymization tool to comply with EU data protection law, GDRP",
   "main": "source/index.js",
   "types": "source/index.d.ts",
@@ -19,7 +19,8 @@
     "lint": "eslint './src/**/*.ts'",
     "lint:fix": "eslint './src/**/*.ts' --fix",
     "build": "tsc",
-    "prepublish": "rm -rf ./source; npm run build"
+    "prepublish": "rm -rf ./source; npm run build",
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "GDPR",
@@ -45,6 +46,7 @@
     "eslint": "^7.32.0",
     "husky": "^7.0.1",
     "jest": "^27.0.6",
+    "semantic-release": "^17.4.5",
     "ts-jest": "^27.0.4",
     "ts-node": "^10.2.0",
     "typescript": "^4.3.5"
