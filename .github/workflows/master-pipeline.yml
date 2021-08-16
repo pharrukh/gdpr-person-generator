@@ -6,7 +6,8 @@ on:
 jobs:
   publish:
     env:
-      INPUT_TOKEN: "${{ secrets.NPM_TOKEN }}"
+      INPUT_TOKEN: ${{ secrets.NPM_TOKEN }}
+      token: ${{ secrets.NPM_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -16,6 +17,6 @@ jobs:
       - run: npm install
       - run: npm test
       - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: "${{ secrets.NPM_TOKEN }}"
+        env:
+          token: ${{ secrets.NPM_TOKEN }}
 
