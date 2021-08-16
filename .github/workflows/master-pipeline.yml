@@ -5,6 +5,8 @@ on:
       - master
 jobs:
   publish:
+    env:
+      INPUT_TOKEN: ${{ secrets.NPM_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
