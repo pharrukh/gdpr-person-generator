@@ -5,10 +5,11 @@ on:
       - master
 jobs:
   publish:
+    runs-on: ubuntu-latest
+    environment: Publication
     env:
       INPUT_TOKEN: ${{ secrets.NPM_TOKEN }}
       token: ${{ secrets.NPM_TOKEN }}
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -23,5 +24,5 @@ jobs:
           echo "$SUPER_SECRET"
       - uses: JS-DevTools/npm-publish@v1
         with:
-          token: "some-value"
+          token: ${{ NPM_TOKEN}}
 
